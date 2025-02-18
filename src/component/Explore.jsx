@@ -85,7 +85,7 @@ import exploreprofileimg from '../assets/images/c1.png'
     <div className='w-full bg-[#80808014] pb-[80px] pt-[50px]'>
       <div className='flex flex-col items-center'>
       <h2 className=" mt-[100px] text-2xl  ">EXPLORE</h2>
-      <p className=" mt-[30px] text-[#00000081] ">Explore New place, food, culture around the world and many more</p>
+      <p className=" mt-[30px] text-[#00000081] mb-16">Explore New place, food, culture around the world and many more</p>
       </div>
       <div className='flex justify-center gap-7  flex-wrap m-auto w-[95%]  '>
         {
@@ -95,7 +95,7 @@ import exploreprofileimg from '../assets/images/c1.png'
                 <div className=' w-[30%]  bg-white  text-gray-500 text-sm leading-6 hover:shadow-2xl group  '>
                   <div className='w-full relative '>
                     <img className='rounded-t w-[100%]  ' src={exploreeachboxes.image} alt="" />
-                    <div className='w-full h-[30px]  absolute bottom-3 left-0 flex justify-between hidden group-hover:flex'>
+                    <div className='w-full h-[30px]  absolute bottom-3 left-0  justify-between hidden group-hover:flex'>
                       <p className='text-white bg-[#ff575d] rounded px-3 ml-3 py-1'>Best Rated</p>
                       <div>
                       <p className='pi pi-twitter bg-black p-1 mr-3 text-white'></p>
@@ -108,8 +108,8 @@ import exploreprofileimg from '../assets/images/c1.png'
                     </div>
                   </div>
                   <h1 className='text-[black] mt-6 mb-2 mx-3 text-lg w-[90%]'>{exploreeachboxes.heading}</h1>
-                  <div className='flex justify-start gap-3 mx-3 mb-4 '>
-                    <p className={`${
+                  <div className='flex justify-start gap-3 mx-3 mb-4 text-wh '>
+                    <p className={`text-white ${
                       exploreeachboxes.star> 4 ?
                       'bg-green-600 '
                       :
@@ -117,7 +117,7 @@ import exploreprofileimg from '../assets/images/c1.png'
                       'bg-yellow-300 '
                       :
                       'bg-[orange] '
-                    } p-[2px] w-[30px] text-center rounded text-white `}>
+                    } p-[2px] w-[30px] text-center rounded `}>
 
                     </p>     
                     <p>{exploreeachboxes.rating} </p>
