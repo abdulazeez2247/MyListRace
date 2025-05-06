@@ -1,20 +1,34 @@
-import React from 'react'
+import React from 'react';
 
- function Footer() {
+function Footer() {
   return (
-  <div>
-   <footer className='mt-5  flex bg-white justify-between items-center px-15 py-7 z-[999] sticky top-0 w-full gap-2 text-[#00000089] font-semibold'>
-     ©Copyright. {new Date().getFullYear()} Designed And Developed By Abdulazeez
-     <nav className=' flex gap-5 mx-4'>
-       <p className=" text-[#00000089] font-semibold hover:text-[#ff575d]  "> <span className='pi pi-phone hover:text-[#ff575d] text-[#00000089] font-semibold'></span>+1 (222) 777 8888</p>
-       <p className=" text-[#00000089] font-semibold pi pi-facebook p-2 rounded-full bg-gray-200 hover:bg-[#ff575d] hover:text-white "></p>
-       <p className=" text-[#00000089] font-semibold pi pi-twitter p-2 rounded-full bg-gray-200 hover:bg-[#ff575d] hover:text-white "></p>
-       <p className=" text-[#00000089] font-semibold pi pi-linkedin p-2 rounded-full bg-gray-200 hover:bg-[#ff575d] hover:text-white "></p>
-       <p className=" text-[#00000089] font-semibold pi pi-google p-2 rounded-full bg-gray-200 hover:bg-[#ff575d] hover:text-white "></p>
-     </nav>
-    </footer>
-  </div>
+    <footer className="bg-white text-[#00000089] font-semibold w-full py-6 px-4 md:px-10 lg:px-20">
+      <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
+        <p className="text-center lg:text-left">
+          © Copyright {new Date().getFullYear()} — Designed and Developed by Abdulazeez
+        </p>
 
-  )
+        <div className="flex flex-wrap justify-center lg:justify-end items-center gap-4">
+          <p className="flex items-center gap-2 hover:text-[#ff575d]">
+            <i className="pi pi-phone"></i> +1 (222) 777 8888
+          </p>
+
+          <a className="p-2 rounded-full bg-gray-200 hover:bg-[#ff575d] hover:text-white transition">
+            <i className="pi pi-facebook"></i>
+          </a>
+          <a className="p-2 rounded-full bg-gray-200 hover:bg-[#ff575d] hover:text-white transition">
+            <i className="pi pi-twitter"></i>
+          </a>
+          <a className="p-2 rounded-full bg-gray-200 hover:bg-[#ff575d] hover:text-white transition">
+            <i className="pi pi-linkedin"></i>
+          </a>
+          <a className="p-2 rounded-full bg-gray-200 hover:bg-[#ff575d] hover:text-white transition">
+            <i className="pi pi-google"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
 }
-export default Footer
+
+export default Footer;

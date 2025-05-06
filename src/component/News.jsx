@@ -34,14 +34,14 @@ import Newsimg3 from '../assets/images/b3.jpg'
         <h2 className=" mt-[150px] text-2xl uppercase ">news and articles</h2>
         <p className=" mt-[30px] capitalize ">Always upto date with our latest News and Articles</p>
         </div>
-        <div className='flex gap-6 justify-center  w-full'>
+        <div className='lg:flex gap-6 justify-center  w-full'>
             {
                 news.map(
                     (newsbox) => {
                         return(
-                            <div className='w-[30%] text-gray-800  mb-[100px] hover:shadow-2xl group '>
+                            <div className=' lg:w-[40%] text-gray-800  mb-[100px] hover:shadow-2xl group '>
                                 <img className='w-full' src={newsbox.image} alt="" />
-                                <div className=' mx-8 group '>
+                                <div className=' mx-8 group  '>
                                     <h2 className=' font-semibold capitalize mt-5 hover:cursor-pointer group-hover:text-[#ff575d] '> {newsbox.header} </h2>
                                     <div className=' flex gap-3 my-3 '>
                                         <p>Posted by <span className=' font-semibold hover:cursor-pointer '>{newsbox.author}</span> </p>

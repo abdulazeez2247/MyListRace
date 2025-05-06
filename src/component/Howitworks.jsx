@@ -28,12 +28,12 @@ function Howitworks() {
             <h1 className='mt-[28%] text-2xl'>HOW IT WORKS</h1>
             <h2 className='mt-[30px]'>Learn More about how our website works</h2>
         </div>
-        <div className='flex gap-5 w-[100%] justify-center align-middle pb-[10%]'>
+        <div className='lg:flex lg:gap-5 w-[100%] justify-center align-middle pb-[10%]'>
             {
                 Howitworksbox.map(
                     function (boxes) {
                         return(
-                            <div className='mt-[70px] mb-[10px] hover:bg-[#ff575d] shadow-md group hover:text-white text-center flex-col rounded-md items-center cursor-pointer  w-[28%]  px-[10px] mt-90px'>
+                            <div className='mt-[70px] mb-[10px] hover:bg-[#ff575d] shadow-md group hover:text-white text-center flex-col rounded-md items-center cursor-pointer  lg:w-[28%]  px-[10px] mt-90px'>
                                 <i className={`pi ${boxes.icon} text-4xl p-6 bg-gray-100 rounded-[50%] mt-8 mb-8 hover:bg-[#ffffff] group-hover:text-[#ff575d]`}></i>
                                 <h1 className='capitalize font-semibold'>{boxes.headingtext}</h1>
                                 <p className=' mt-5 text-[#00000075] group-hover:text-white mb-10px'>{boxes.paragraphtext}</p>

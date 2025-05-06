@@ -2,11 +2,10 @@ import React from 'react'
 import clientimg1 from '../assets/images/c1.png'
 import clientimg2 from '../assets/images/c2.png'
 import clientimg3 from '../assets/images/c3.png'
-import clientimg4 from '../assets/images/c4.png'
 
- function Clientreviews() {
+function Clientreviews() {
 
-    let clreviews = [
+    const clreviews = [
         {
             clImg: clientimg1,
             name: 'Moniru Islam',
@@ -25,120 +24,54 @@ import clientimg4 from '../assets/images/c4.png'
             location: 'London, UK',
             about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, sit! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, sit!'
         },
-        // {
-        //     clImg: clientimg4,
-        //     name: 'Tom Leakar',
-        //     location: 'London, UK',
-        //     about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, sit! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, sit!'
-        // },
-        // {
-        //     clImg: clientimg1,
-        //     name: 'Moniru Islam',
-        //     location: 'London, UK',
-        //     about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, sit! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, sit!'
-        // },
-        // {
-        //     clImg: clientimg2,
-        //     name: 'Shohrab Hossain',
-        //     location: 'London, UK',
-        //     about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, sit! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, sit!'
-        // },
-        // {
-        //     clImg: clientimg3,
-        //     name: 'Moniru Islam',
-        //     location: 'London, UK',
-        //     about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, sit! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, sit!'
-        // },
-        // {
-        //     clImg: clientimg4,
-        //     name: 'Shohrab Hossain',
-        //     location: 'London, UK',
-        //     about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, sit! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, sit!'
-        // },
-        // {
-        //     clImg: clientimg1,
-        //     name: 'Tom Leakar',
-        //     location: 'London, UK',
-        //     about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, sit! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, sit!'
-        // },
     ]
 
-    let traffic = [
-        {
-            figure: '90K+',
-            cart: 'Listings'
-        },
-        {
-            figure: '40K+',
-            cart: 'Listing Categories'
-        },
-        {
-            figure: '65K+',
-            cart: 'Visitors'
-        },
-        {
-            figure: '50K+',
-            cart: 'Happy Clients'
-        },
+    const traffic = [
+        { figure: '90K+', cart: 'Listings' },
+        { figure: '40K+', cart: 'Listing Categories' },
+        { figure: '65K+', cart: 'Visitors' },
+        { figure: '50K+', cart: 'Happy Clients' },
     ]
 
-  return (
-    <div className='mt-10'>
-        <div className='bg-[white] flex flex-col items-center pt-10'>
-            <h1 className='text-2xl'>CLIENTS REVIEWS</h1>
-            <h2 className='pt-6 text-[#0000007f]'>What our client say about us</h2>
-        </div>
-        <div className='w-full flex justify-center gap-4 py-[100px] bg-white overflow-x-auto'>
-            {
-                clreviews.map(
-                    (clientboxes) => {
-                        return(
-                            <div className='w-[28%] h-[50vh] shadow-sm p-5 rounded text-gray-400 hover:shadow-2xl'>
-                                <div className='group cursor-pointer flex items-end gap-5 mt-9 mx-5 '>
-                                    <div className=" w-[50px]">
-                                        <img className='w-[100%]' src={clientboxes.clImg} alt="" />
-                                    </div>
-                                    <div className=''>
-                                        <h3 className=' text-gray-950 text-lg font-semibold'>{clientboxes.name}</h3>
-                                        <p>{clientboxes.location}</p>
-                                        <div>
-                                        <span className=" pi pi-star-fill text-yellow-500 text-sm "></span>
-                                        <span className=" pi pi-star-fill text-yellow-500 text-sm "></span>
-                                        <span className=" pi pi-star-fill text-yellow-500 text-sm "></span>
-                                        <span className=" pi pi-star-fill text-yellow-500 text-sm "></span>
-                                        <span className=" pi pi-star-fill text-yellow-500 text-sm "></span>
-                                        </div>
-                                        
-                                    </div>
+    return (
+        <div className='mt-10'>
+            <div className='bg-white flex flex-col items-center pt-10 text-center px-4'>
+                <h1 className='text-2xl font-semibold'>CLIENTS REVIEWS</h1>
+                <h2 className='pt-4 text-gray-600'>What our client say about us</h2>
+            </div>
 
+            {/* Review Cards */}
+            <div className='w-full flex flex-wrap justify-center gap-6 py-16 bg-white px-4'>
+                {clreviews.map((client, index) => (
+                    <div key={index} className='w-full sm:w-[90%] md:w-[45%] lg:w-[30%] bg-white shadow-sm p-6 rounded-lg hover:shadow-lg transition-shadow'>
+                        <div className='flex items-center gap-4 mb-4'>
+                            <img className='w-14 h-14 rounded-full object-cover' src={client.clImg} alt={client.name} />
+                            <div>
+                                <h3 className='text-lg font-bold text-gray-800'>{client.name}</h3>
+                                <p className='text-sm text-gray-500'>{client.location}</p>
+                                <div className='flex gap-1 mt-1'>
+                                    {Array(5).fill(0).map((_, i) => (
+                                        <span key={i} className="pi pi-star-fill text-yellow-500 text-xs"></span>
+                                    ))}
                                 </div>
-                                <p>{clientboxes.about}</p>
-
-
                             </div>
-                        )
-                    }
-                )
-            }
+                        </div>
+                        <p className='text-sm text-gray-600'>{client.about}</p>
+                    </div>
+                ))}
+            </div>
 
+            {/* Traffic Counters */}
+            <div className='bg-[#111827] py-10 px-4 flex flex-wrap justify-center gap-10 text-white text-center'>
+                {traffic.map((item, index) => (
+                    <div key={index}>
+                        <h2 className='text-4xl font-bold'>{item.figure}</h2>
+                        <p className='text-xl'>{item.cart}</p>
+                    </div>
+                ))}
+            </div>
         </div>
-        <div className='counterbanner flex gap-40 items-center justify-center flex-wrap text-white'>
-            {
-                traffic.map(
-                    (trafficbox) => {
-                        return(
-                            <div className='text-center'>
-                                <h2 className='text-5xl'>{trafficbox.figure}</h2>
-                                <p className='text-2xl'>{trafficbox.cart}</p>
-                                </div>
-                            
-                        )
-                    }
-                )
-            }
-        </div>
-      
-    </div>
-  )
+    )
 }
+
 export default Clientreviews

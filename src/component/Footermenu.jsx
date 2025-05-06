@@ -1,24 +1,52 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 function Footermenu() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className='mt-5'>
-       <nav className='flex bg-white justify-between items-center px-20 py-7 z-[999] sticky top-0 w-full h-[10vh] '>
-            <h3 className='font-bold text-xl'>List<span className=' text-[#ff575d] font-sans font-bold'>Race</span></h3>
-            <ul className='flex sm:hidden lg:flex gap-10 font-sans text-[#100] px'>
-                <li className='hover:text-[red] cursor-pointer text-[#00000089] font-semibold '>HOW IT WORKS</li>
-                <li className='hover:text-[red] cursor-pointer text-[#00000089] font-semibold'>EXPLORE</li>
-                <li className='hover:text-[red] cursor-pointer text-[#00000089] font-semibold'>REVIEW</li>
-                <li className='hover:text-[red] cursor-pointer text-[#00000089] font-semibold'>BLOG</li>
-                <li className='hover:text-[red] cursor-pointer text-[#00000089] font-semibold'>CONTACT</li>                
-                <li className='hover:text-[red] cursor-pointer text-[#00000089] font-semibold'>MY ACCOUNT</li>                
+      <nav className='bg-white px-6 lg:px-20 py-5 sticky top-0 z-[999] w-full'>
+        <div className='flex justify-between items-center'>
+          <h3 className='font-bold text-xl'>
+            List<span className='text-[#ff575d] font-sans font-bold'>Race</span>
+          </h3>
+          <button
+            className='text-3xl lg:hidden text-[#333]'
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            &#9776;
+          </button>
+        </div>
 
-            </ul>
-        </nav>
-        <hr  className='mr-20 ml-15 text-[#00000018] mt-5'/>
-        
+        {/* Desktop menu */}
+        <ul className='hidden lg:flex lg:gap-10 font-sans text-[#100] mt-4 lg:mt-0'>
+          {['HOW IT WORKS', 'EXPLORE', 'REVIEW', 'BLOG', 'CONTACT', 'MY ACCOUNT'].map((item, i) => (
+            <li
+              key={i}
+              className='hover:text-[red] cursor-pointer text-[#00000089] font-semibold'
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        {/* Mobile menu toggle */}
+        {isOpen && (
+          <ul className='flex flex-col gap-3 mt-4 lg:hidden font-sans text-[#100]'>
+            {['HOW IT WORKS', 'EXPLORE', 'REVIEW', 'BLOG', 'CONTACT', 'MY ACCOUNT'].map((item, i) => (
+              <li
+                key={i}
+                className='hover:text-[red] cursor-pointer text-[#00000089] font-semibold'
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
+      </nav>
+      <hr className='border-[#00000018] mx-6 lg:mx-20 mt-5' />
     </div>
-  )
+  );
 }
 
-export default Footermenu
+export default Footermenu;
